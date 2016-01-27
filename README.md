@@ -4,17 +4,19 @@ We've come across a memory leak when using nnet-train-simple, we have tracked it
 down to cu-device.cc not calling `cudaDevieReset()` on exit.
 
 The affects of this bug are quite severe, during our training stage we see
-around 30MB of memory lost for each nnet iteration. The very starnge thing is
-that this memory is never reclaimed at program exit and requires a machine
-reboot to retrieve.
+around 30MB of memory lost for each nnet iteration.
 
 Over the number of iterations in our training scripts we consume all memory on
 the machine (32GB) and cannot complete training.
 
+The very strange thing is that this memory is never reclaimed at program exit
+and requires a machine reboot to retrieve. I am seperately trying to isolate
+this and report to nvidia.
+
 Below is extra info, some steps to reproduce and a fix that we have tested
 implemented and managed to complete our training with.
 
-## Steps to reporduce ...
+## Steps to reproduce ...
 
 ### Git submodules
 

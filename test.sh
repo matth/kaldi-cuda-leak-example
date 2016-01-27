@@ -5,7 +5,7 @@ function run_script {
 
   echo "Running example in $version"
 
-  valgrind --leak-check full $version/src/nnet2bin/nnet-train-simple \
+  valgrind --leak-check=full $version/src/nnet2bin/nnet-train-simple \
     --minibatch-size=256 --srand=0 test.mdl egs.ark /dev/null        \
     > $version.log 2>&1
 }
