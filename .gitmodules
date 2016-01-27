@@ -1,0 +1,6 @@
+[submodule "kaldi-trunk"]
+	path = kaldi-trunk
+	url = https://github.com/kaldi-asr/kaldi.git
+[submodule "kaldi-fix"]
+	path = kaldi-fix
+	url = https://github.com/matth/kaldi.git
