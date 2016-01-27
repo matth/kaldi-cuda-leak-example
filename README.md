@@ -23,6 +23,22 @@ This project has submodules ...
     git submodule init
     git submodule update
 
+## Compile Kaldi versions
+
+   cd kaldi-upstream/tools
+   make -j 8
+   cd ../src
+   ./configure
+   make depend -j 8
+   make -j 8
+
+   cd kaldi-fix/tools
+   make -j 8
+   cd ../src
+   ./configure
+   make depend -j 8
+   make -j 8
+
 ### Environment
 
     $ uname -a
