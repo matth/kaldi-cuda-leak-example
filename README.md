@@ -73,3 +73,5 @@ This project has submodules ...
     # with fix applied. It runs under valgrind and records lost memory
 
     ./test.sh
+
+    tail -n 11 kaldi-*log
