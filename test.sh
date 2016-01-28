@@ -6,8 +6,8 @@ function run_script {
   echo "Running example in $version"
 
   valgrind --leak-check=full $version/src/nnet2bin/nnet-train-simple \
-    --minibatch-size=256 --srand=0 test.mdl egs.ark /dev/null        \
-    > $version.log 2>&1
+    --minibatch-size=512 --srand=33 test.mdl ark:egs.ark             \
+    /dev/null  > $version.log 2>&1
 }
 
 run_script kaldi-upstream
