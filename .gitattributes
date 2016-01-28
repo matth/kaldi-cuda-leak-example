@@ -1,0 +1,2 @@
+egs.ark filter=lfs diff=lfs merge=lfs -text
+test.mdl filter=lfs diff=lfs merge=lfs -text
